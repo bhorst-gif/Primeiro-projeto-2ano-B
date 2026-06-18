@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flashcards - Doenças Visuais</title>
     <style>
-        /* Configurações Globais de Design */
+        /* Configurações Globais */
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
@@ -56,11 +56,22 @@
             margin-bottom: 30px;
         }
 
+        /* Grade organizadora para os 5 cartões */
+        .grade-cartoes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
         /* Estrutura do Flashcard (Efeito 3D) */
         article {
-            width: 320px;
+            width: 100%;
+            max-width: 320px;
             height: 450px;
-            perspective: 1000px; /* Crucial para o efeito 3D de profundidade */
+            perspective: 1000px; /* Ativa o efeito 3D de profundidade */
             margin: 0 auto;
         }
 
@@ -101,12 +112,39 @@
             background-color: #f0f7ff;
         }
 
-        /* Elementos Internos do Cartão */
-        .cartao-imagem {
+        /* Ilustrações em CSS puro (substitutos das imagens externas) */
+        .cartao-vetor {
             width: 100%;
-            height: 60%;
-            object-fit: cover;
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
         }
+
+        .cartao-vetor span {
+            font-size: 45px;
+            margin-bottom: 5px;
+        }
+
+        /* Cores exclusivas para diferenciar os temas dos cartões */
+        .glaucoma-frente { background: linear-gradient(135deg, #ff7675, #d63031); }
+        .glaucoma-verso  { background: linear-gradient(135deg, #74b9ff, #0984e3); }
+        
+        .catarata-frente { background: linear-gradient(135deg, #ffeaa7, #fdcb6e); color: #333; }
+        .catarata-verso  { background: linear-gradient(135deg, #81ecec, #00cec9); }
+        
+        .astigmatismo-frente { background: linear-gradient(135deg, #a29bfe, #6c5ce7); }
+        .astigmatismo-verso  { background: linear-gradient(135deg, #fab1a0, #e17055); }
+
+        .daltonismo-frente { background: linear-gradient(135deg, #fd79a8, #e84393); }
+        .daltonismo-verso  { background: linear-gradient(135deg, #55efc4, #00b894); }
+
+        .miopia-frente { background: linear-gradient(135deg, #b2bec3, #636e72); }
+        .miopia-verso  { background: linear-gradient(135deg, #6c5ce7, #341f97); }
 
         .tag-status {
             font-size: 14px;
@@ -129,7 +167,7 @@
         p {
             padding: 15px;
             margin: auto 0;
-            font-size: 16px;
+            font-size: 15px;
             line-height: 1.5;
             color: #444;
         }
@@ -138,9 +176,9 @@
             background-color: #2c3e50;
             color: white;
             text-align: center;
-            padding: 15px;
+            padding: 1px;
             font-size: 14px;
-            margin-top: auto;
+            margin-top: 40px;
         }
     </style>
 </head>
@@ -154,34 +192,81 @@
     </header>
 
     <main>
-        <h2>Descubra a verdade passando o mouse</h2> 
-        <section> 
+        <h2>Descubra a verdade passando o mouse nos cartões</h2> 
+        
+        <!-- Container que agrupa a grade de cartões -->
+        <section class="grade-cartoes"> 
+
+            <!-- CARTÃO 1: Glaucoma -->
             <article> 
-                <!-- Container unificado para o giro -->
                 <div class="cartao-container"> 
-                    
-                    <!-- LADO DA FRENTE: O Mito -->
                     <div class="cartao-frente"> 
-                        <img src="https://unsplash.com" alt="Exame de vista em consultório" class="cartao-imagem"> 
+                        <div class="cartao-vetor glaucoma-frente"><span>👁️❌</span>GLAUCOMA</div> 
                         <div class="tag-status tag-mito">Mito</div>
                         <p>O Glaucoma sempre avisa quando está chegando através de fortes dores de cabeça e nos olhos.</p> 
                     </div> 
-                    
-                    <!-- LADO DO VERSO: A Verdade -->
                     <div class="cartao-verso"> 
-                        <img src="https://unsplash.com" alt="Equipamento oftalmológico moderno" class="cartao-imagem"> 
+                        <div class="cartao-vetor glaucoma-verso"><span>👁️✨</span>GLAUCOMA</div> 
                         <div class="tag-status tag-verdade">Verdade</div>
-                        <p>O glaucoma é uma doença assintomática e silenciosa. A perda visual começa sutilmente pelas bordas (periferia) e só é notada em estágios avançados.</p> 
+                        <p>O glaucoma é uma doença assintomática e silenciosa. A perda visual começa sutilmente pelas bordas e só é notada em estágios avançados.</p> 
                     </div> 
-
                 </div> 
             </article> 
-        </section> 
-    </main>
 
-    <footer>
-        <p>&copy; 2026 - Projeto Informativo sobre Cuidados Visuais.</p>
-    </footer>
+            <!-- CARTÃO 2: Catarata -->
+            <article> 
+                <div class="cartao-container"> 
+                    <div class="cartao-frente"> 
+                        <div class="cartao-vetor catarata-frente"><span>☁️👁️</span>CATARATA</div> 
+                        <div class="tag-status tag-mito">Mito</div>
+                        <p>A catarata é uma doença que só pode ser tratada através do uso contínuo de colírios fortes.</p> 
+                    </div> 
+                    <div class="cartao-verso"> 
+                        <div class="cartao-vetor catarata-verso"><span>🔬👁️</span>CATARATA</div> 
+                        <div class="tag-status tag-verdade">Verdade</div>
+                        <p>O único tratamento eficaz para catarata é a cirurgia, onde o cristalino opaco do olho é substituído por uma lente artificial transparente.</p> 
+                    </div> 
+                </div> 
+            </article> 
 
-</body>
-</html>
+            <!-- CARTÃO 3: Astigmatismo -->
+            <article> 
+                <div class="cartao-container"> 
+                    <div class="cartao-frente"> 
+                        <div class="cartao-vetor astigmatismo-frente"><span>💫👁️</span>ASTIGMATISMO</div> 
+                        <div class="tag-status tag-mito">Mito</div>
+                        <p>Quem tem astigmatismo enxerga mal apenas para objetos que estão muito distantes.</p> 
+                    </div> 
+                    <div class="cartao-verso"> 
+                        <div class="cartao-vetor astigmatismo-verso"><span>👓👁️</span>ASTIGMATISMO</div> 
+                        <div class="tag-status tag-verdade">Verdade</div>
+                        <p>O astigmatismo causa visão borrada e distorcida para QUALQUER distância (perto ou longe), devido a uma curvatura imperfeita da córnea.</p> 
+                    </div> 
+                </div> 
+            </article> 
+
+            <!-- CARTÃO 4: Daltonismo -->
+            <article> 
+                <div class="cartao-container"> 
+                    <div class="cartao-frente"> 
+                        <div class="cartao-vetor daltonismo-frente"><span>⚫⚪</span>DALTONISMO</div> 
+                        <div class="tag-status tag-mito">Mito</div>
+                        <p>Todas as pessoas daltonicas enxergam o mundo inteiramente em preto e branco.</p> 
+                    </div> 
+                    <div class="cartao-verso"> 
+                        <div class="cartao-vetor daltonismo-verso"><span>🟢🔴</span>DALTONISMO</div> 
+                        <div class="tag-status tag-verdade">Verdade</div>
+                        <p>A grande maioria dos daltônicos enxerga cores, mas tem dificuldade severa em distinguir tons específicos, principalmente o verde e o vermelho.</p> 
+                    </div> 
+                </div> 
+            </article> 
+
+            <!-- CARTÃO 5: Miopia -->
+            <article> 
+                <div class="cartao-container"> 
+                    <div class="cartao-frente"> 
+                        <div class="cartao-vetor miopia-frente"><span>🔍❌</span>MIOPIA</div> 
+                        <div class="tag-status tag-mito">Mito</div>
+                        <p>Forçar a vista para ler no escuro pode aumentar permanentemente o seu grau de miopia.</p> 
+                    </div> 
+                    <div class="cartao-verso"> 
