@@ -1,37 +1,187 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flashcards Copa do Mundo 2026</title>
+    <title>Flashcards - Doenças Visuais</title>
+    <style>
+        /* Configurações Globais de Design */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #0288d1;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        main {
+            flex: 1;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        main h2 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        /* Estrutura do Flashcard (Efeito 3D) */
+        article {
+            width: 320px;
+            height: 450px;
+            perspective: 1000px; /* Crucial para o efeito 3D de profundidade */
+            margin: 0 auto;
+        }
+
+        /* O container que vai realizar o giro físico */
+        .cartao-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s ease;
+            cursor: pointer;
+        }
+
+        /* Evento de passar o mouse que ativa a rotação */
+        article:hover .cartao-container {
+            transform: rotateY(180deg);
+        }
+
+        /* Estilos compartilhados pela Frente e Verso */
+        .cartao-frente, .cartao-verso {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            backface-visibility: hidden; /* Esconde o lado oposto ao virar */
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+        }
+
+        /* O verso começa virado na inicialização */
+        .cartao-verso {
+            transform: rotateY(180deg);
+            background-color: #f0f7ff;
+        }
+
+        /* Elementos Internos do Cartão */
+        .cartao-imagem {
+            width: 100%;
+            height: 60%;
+            object-fit: cover;
+        }
+
+        .tag-status {
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 8px;
+            letter-spacing: 1px;
+        }
+
+        .tag-mito {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+
+        .tag-verdade {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        p {
+            padding: 15px;
+            margin: auto 0;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #444;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+            margin-top: auto;
+        }
+    </style>
 </head>
 <body>
+
     <header>
-    <h1>Copa do Mundo 2026</h1>
-    <nav>
-    <a href="#">Início</a>
-    </nav>
+        <h1>Saúde Ocular</h1>
+        <nav>
+            <a href="#">Início</a>
+        </nav>
     </header>
 
     <main>
-  <h2>Descubra a verdade passando o mouse</h2> 
-  <section> 
-    <article> 
-      <div> 
-        <div> 
-          <img src= "https://odia.ig.com.br/esporte/2023/05/6634909-logo-da-copa-do-mundo-de-2026-tem-pela-primeira-vez-trofeu-na-arte.html" alt="Pinguim" class="cartao-imagem"> 
-          <p>Pinguins conseguem voar como pássaros!</p> 
-        </div> 
-        <div class="cartao-verso"> 
-          <img src="https://brasilescola.uol.com.br/quimica/composicao-quimica-taca-copa-mundo.htm" alt="Taça" class="cartao-imagem"> 
-          <p> Taça copa do mundo 2026.</p> 
-        </div> 
-      </div> 
-    </article> 
-  </section> 
+        <h2>Descubra a verdade passando o mouse</h2> 
+        <section> 
+            <article> 
+                <!-- Container unificado para o giro -->
+                <div class="cartao-container"> 
+                    
+                    <!-- LADO DA FRENTE: O Mito -->
+                    <div class="cartao-frente"> 
+                        <img src="https://unsplash.com" alt="Exame de vista em consultório" class="cartao-imagem"> 
+                        <div class="tag-status tag-mito">Mito</div>
+                        <p>O Glaucoma sempre avisa quando está chegando através de fortes dores de cabeça e nos olhos.</p> 
+                    </div> 
+                    
+                    <!-- LADO DO VERSO: A Verdade -->
+                    <div class="cartao-verso"> 
+                        <img src="https://unsplash.com" alt="Equipamento oftalmológico moderno" class="cartao-imagem"> 
+                        <div class="tag-status tag-verdade">Verdade</div>
+                        <p>O glaucoma é uma doença assintomática e silenciosa. A perda visual começa sutilmente pelas bordas (periferia) e só é notada em estágios avançados.</p> 
+                    </div> 
+
+                </div> 
+            </article> 
+        </section> 
     </main>
 
     <footer>
+        <p>&copy; 2026 - Projeto Informativo sobre Cuidados Visuais.</p>
     </footer>
+
 </body>
 </html>
