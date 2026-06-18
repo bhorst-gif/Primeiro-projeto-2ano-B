@@ -1,0 +1,193 @@
+/* ==========================================================================
+   1. CONFIGURAÇÕES GLOBAIS E RESET
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   2. ESTRUTURA DO SITE (HEADER, NAV, FOOTER)
+   ========================================================================== */
+header {
+    background-color: #0288d1;
+    color: #ffffff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+main {
+    flex: 1;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+main h2 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    margin-top: 40px;
+}
+
+/* ==========================================================================
+   3. LAYOUT EM GRADE (RESPONSIVIDADE)
+   ========================================================================== */
+.grade-cartoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ==========================================================================
+   4. ESTRUTURA DOS FLASHCARDS (EFEITO 3D)
+   ========================================================================== */
+article {
+    width: 100%;
+    max-width: 320px;
+    height: 450px;
+    perspective: 1000px; /* Ativa a profundidade para o efeito 3D */
+    margin: 0 auto;
+}
+
+.cartao-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* Suaviza o giro */
+    cursor: pointer;
+}
+
+/* Ativa a rotação ao passar o mouse */
+article:hover .cartao-container {
+    transform: rotateY(180deg);
+}
+
+.cartao-frente, .cartao-verso {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden; /* Esconde o verso que está de costas */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+}
+
+/* O verso começa invertido por padrão */
+.cartao-verso {
+    transform: rotateY(180deg);
+    background-color: #f0f7ff;
+}
+
+/* ==========================================================================
+   5. COMPONENTES INTERNOS DO CARTÃO
+   ========================================================================== */
+.cartao-vetor {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+}
+
+.cartao-vetor span {
+    font-size: 45px;
+    margin-bottom: 8px;
+}
+
+.tag-status {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 8px;
+    letter-spacing: 1px;
+}
+
+.tag-mito {
+    background-color: #ffebee;
+    color: #c62828;
+}
+
+.tag-verdade {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+p {
+    padding: 20px;
+    margin: auto 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #444444;
+}
+
+/* ==========================================================================
+   6. PALETA DE CORES PERSONALIZADA (GRADIENTES)
+   ========================================================================== */
+.glaucoma-frente      { background: linear-gradient(135deg, #ff7675, #d63031); }
+.glaucoma-verso       { background: linear-gradient(135deg, #74b9ff, #0984e3); }
+
+.catarata-frente      { background: linear-gradient(135deg, #ffeaa7, #fdcb6e); color: #2d3436; }
+.catarata-verso       { background: linear-gradient(135deg, #81ecec, #00cec9); }
+
+.astigmatismo-frente  { background: linear-gradient(135deg, #a29bfe, #6c5ce7); }
+.astigmatismo-verso   { background: linear-gradient(135deg, #fab1a0, #e17055); }
+
+.daltonismo-frente    { background: linear-gradient(135deg, #fd79a8, #e84393); }
+.daltonismo-verso     { background: linear-gradient(135deg, #55efc4, #00b894); }
+
+.miopia-frente        { background: linear-gradient(135deg, #b2bec3, #636e72); }
+.miopia-verso         { background: linear-gradient(135deg, #6c5ce7, #341f97); }
