@@ -3,185 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo.css">
     <title>Flashcards - Doenças Visuais</title>
-    <style>
-        /* Configurações Globais */
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f7fa;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        header {
-            background-color: #0288d1;
-            color: white;
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 8px 16px;
-            border-radius: 4px;
-            transition: background 0.3s;
-        }
-
-        nav a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-
-        main {
-            flex: 1;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        main h2 {
-            color: #2c3e50;
-            margin-bottom: 30px;
-        }
-
-        /* Grade organizadora para os 5 cartões */
-        .grade-cartoes {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* Estrutura do Flashcard (Efeito 3D) */
-        article {
-            width: 100%;
-            max-width: 320px;
-            height: 450px;
-            perspective: 1000px; /* Ativa o efeito 3D de profundidade */
-            margin: 0 auto;
-        }
-
-        /* O container que vai realizar o giro físico */
-        .cartao-container {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            transform-style: preserve-3d;
-            transition: transform 0.6s ease;
-            cursor: pointer;
-        }
-
-        /* Evento de passar o mouse que ativa a rotação */
-        article:hover .cartao-container {
-            transform: rotateY(180deg);
-        }
-
-        /* Estilos compartilhados pela Frente e Verso */
-        .cartao-frente, .cartao-verso {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            backface-visibility: hidden; /* Esconde o lado oposto ao virar */
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            background-color: #fff;
-        }
-
-        /* O verso começa virado na inicialização */
-        .cartao-verso {
-            transform: rotateY(180deg);
-            background-color: #f0f7ff;
-        }
-
-        /* Ilustrações em CSS puro (substitutos das imagens externas) */
-        .cartao-vetor {
-            width: 100%;
-            height: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 14px;
-        }
-
-        .cartao-vetor span {
-            font-size: 45px;
-            margin-bottom: 5px;
-        }
-
-        /* Cores exclusivas para diferenciar os temas dos cartões */
-        .glaucoma-frente { background: linear-gradient(135deg, #ff7675, #d63031); }
-        .glaucoma-verso  { background: linear-gradient(135deg, #74b9ff, #0984e3); }
-        
-        .catarata-frente { background: linear-gradient(135deg, #ffeaa7, #fdcb6e); color: #333; }
-        .catarata-verso  { background: linear-gradient(135deg, #81ecec, #00cec9); }
-        
-        .astigmatismo-frente { background: linear-gradient(135deg, #a29bfe, #6c5ce7); }
-        .astigmatismo-verso  { background: linear-gradient(135deg, #fab1a0, #e17055); }
-
-        .daltonismo-frente { background: linear-gradient(135deg, #fd79a8, #e84393); }
-        .daltonismo-verso  { background: linear-gradient(135deg, #55efc4, #00b894); }
-
-        .miopia-frente { background: linear-gradient(135deg, #b2bec3, #636e72); }
-        .miopia-verso  { background: linear-gradient(135deg, #6c5ce7, #341f97); }
-
-        .tag-status {
-            font-size: 14px;
-            font-weight: bold;
-            text-transform: uppercase;
-            padding: 8px;
-            letter-spacing: 1px;
-        }
-
-        .tag-mito {
-            background-color: #ffebee;
-            color: #69b31a;
-        }
-
-        .tag-verdade {
-            background-color: #e8f5e9;
-            color: #2e7d32;
-        }
-
-        p {
-            padding: 15px;
-            margin: auto 0;
-            font-size: 15px;
-            line-height: 1.5;
-            color: #444;
-        }
-
-        footer {
-            background-color: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 1px;
-            font-size: 14px;
-            margin-top: 40px;
-        }
-    </style>
+    <!-- Linha que conecta este HTML com o arquivo de estilos CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -194,8 +18,6 @@
 
     <main>
         <h2>Descubra a verdade passando o mouse nos cartões</h2> 
-        
-        <!-- Container que agrupa a grade de cartões -->
         <section class="grade-cartoes"> 
 
             <!-- CARTÃO 1: Glaucoma -->
@@ -220,7 +42,7 @@
                     <div class="cartao-frente"> 
                         <div class="cartao-vetor catarata-frente"><span>☁️👁️</span>CATARATA</div> 
                         <div class="tag-status tag-mito">Mito</div>
-                        <p>A catarata é uma doença que só pode ser tratada através do uso contínuo de colírios fortes.</p> 
+                        <p>A catarata é uma doença que só pode ser treated através do uso contínuo de colírios fortes.</p> 
                     </div> 
                     <div class="cartao-verso"> 
                         <div class="cartao-vetor catarata-verso"><span>🔬👁️</span>CATARATA</div> 
@@ -271,3 +93,19 @@
                         <p>Forçar a vista para ler no escuro pode aumentar permanentemente o seu grau de miopia.</p> 
                     </div> 
                     <div class="cartao-verso"> 
+                        <div class="cartao-vetor miopia-verso"><span>📖✨</span>MIOPIA</div> 
+                        <div class="tag-status tag-verdade">Verdade</div>
+                        <p>Ler no escuro causa apenas cansaço visual temporário e dor de cabeça. A miopia está ligada ao formato anatômico do olho e à genética.</p> 
+                    </div> 
+                </div> 
+            </article> 
+
+        </section> 
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Projeto Informativo sobre Cuidados Visuais.</p>
+    </footer>
+
+</body>
+</html>

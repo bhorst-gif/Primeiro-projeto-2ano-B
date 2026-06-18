@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. CONFIGURAÇÕES GLOBAIS E RESET (DARK MODE)
+   CONFIGURAÇÕES GLOBAIS E RESET (DARK MODE)
    ========================================================================== */
 * {
     box-sizing: border-box;
@@ -9,8 +9,8 @@
 
 body {
     font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
-    background-color: #121214; /* Fundo principal escuro */
-    color: #e1e1e6; /* Texto claro de alto contraste */
+    background-color: #121214;
+    color: #e1e1e6;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -18,7 +18,7 @@ body {
 }
 
 /* ==========================================================================
-   2. ESTRUTURA DO SITE (HEADER, NAV, FOOTER)
+   ESTRUTURA DO SITE (HEADER, NAV, FOOTER)
    ========================================================================== */
 header {
     background-color: #1a1a1e;
@@ -34,7 +34,7 @@ header {
 header h1 {
     font-size: 24px;
     font-weight: 600;
-    color: #00b0ff; /* Azul neon de destaque */
+    color: #00b0ff;
 }
 
 nav a {
@@ -74,7 +74,7 @@ footer {
 }
 
 /* ==========================================================================
-   3. LAYOUT EM GRADE (RESPONSIVIDADE)
+   LAYOUT EM GRADE E FLASHCARDS (EFEITO 3D)
    ========================================================================== */
 .grade-cartoes {
     display: grid;
@@ -85,9 +85,6 @@ footer {
     padding: 20px;
 }
 
-/* ==========================================================================
-   4. ESTRUTURA DOS FLASHCARDS (EFEITO 3D NO ESCURO)
-   ========================================================================== */
 article {
     width: 100%;
     max-width: 320px;
@@ -117,11 +114,11 @@ article:hover .cartao-container {
     left: 0;
     backface-visibility: hidden;
     border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Sombras mais densas */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    background-color: #1a1a1e; /* Fundo interno dos cartões */
+    background-color: #1a1a1e;
     border: 1px solid #29292e;
 }
 
@@ -131,7 +128,7 @@ article:hover .cartao-container {
 }
 
 /* ==========================================================================
-   5. COMPONENTES INTERNOS DO CARTÃO
+   COMPONENTES INTERNOS E CORES
    ========================================================================== */
 .cartao-vetor {
     width: 100%;
@@ -160,14 +157,14 @@ article:hover .cartao-container {
 }
 
 .tag-mito {
-    background-color: #2d1a1e; /* Fundo vermelho escuro */
-    color: #f75a68; /* Texto vermelho neon */
+    background-color: #2d1a1e;
+    color: #f75a68;
     border-bottom: 1px solid #4d1a21;
 }
 
 .tag-verdade {
-    background-color: #182d24; /* Fundo verde escuro */
-    color: #00b37e; /* Texto verde neon */
+    background-color: #182d24;
+    color: #00b37e;
     border-bottom: 1px solid #194d37;
 }
 
@@ -176,23 +173,17 @@ p {
     margin: auto 0;
     font-size: 15px;
     line-height: 1.6;
-    color: #c4c4cc; /* Texto cinza claro confortável para leitura */
+    color: #c4c4cc;
 }
 
-/* ==========================================================================
-   6. PALETA DE CORES EM GRADIENTES (VERSÃO DARK NEON)
-   ========================================================================== */
+/* Gradientes dos Cartões */
 .glaucoma-frente      { background: linear-gradient(135deg, #e55039, #b33925); }
 .glaucoma-verso       { background: linear-gradient(135deg, #4a69bd, #1e3799); }
-
 .catarata-frente      { background: linear-gradient(135deg, #f6b93b, #b38119); color: #ffffff; }
 .catarata-verso       { background: linear-gradient(135deg, #079992, #0c7570); }
-
 .astigmatismo-frente  { background: linear-gradient(135deg, #786fa6, #574b90); }
 .astigmatismo-verso   { background: linear-gradient(135deg, #e66767, #b33939); }
-
 .daltonismo-frente    { background: linear-gradient(135deg, #cf6a87, #b3395c); }
 .daltonismo-verso     { background: linear-gradient(135deg, #32ff7e, #15b34f); }
-
 .miopia-frente        { background: linear-gradient(135deg, #4b6584, #33465e); }
 .miopia-verso         { background: linear-gradient(135deg, #3c40c6, #242793); }
