@@ -3,109 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flashcards - Doenças Visuais</title>
-    <!-- Linha que conecta este HTML com o arquivo de estilos CSS -->
+    <title>Flashcards: Doenças dos Olhos</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <h1>Saúde Ocular</h1>
-        <nav>
-            <a href="#">Início</a>
-        </nav>
+        <h1>Flashcards: Oftalmologia</h1>
+        <p>Passe o mouse ou toque no card para ver a resposta</p>
     </header>
 
-    <main>
-        <h2>Descubra a verdade passando o mouse nos cartões</h2> 
-        <section class="grade-cartoes"> 
+    <main class="container">
+        <!-- Card 1 -->
+        <div class="flashcard">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h2>Glaucoma</h2>
+                    <p>O que causa e qual o principal fator de risco?</p>
+                </div>
+                <div class="card-back">
+                    <h2>Resposta</h2>
+                    <p>É uma lesão no nervo óptico, geralmente causada pelo **aumento da pressão intraocular**. É a principal causa de cegueira irreversível no mundo.</p>
+                </div>
+            </div>
+        </div>
 
-            <!-- CARTÃO 1: Glaucoma -->
-            <article> 
-                <div class="cartao-container"> 
-                    <div class="cartao-frente"> 
-                        <div class="cartao-vetor glaucoma-frente"><span>👁️❌</span>GLAUCOMA</div> 
-                        <div class="tag-status tag-mito">Mito</div>
-                        <p>O Glaucoma sempre avisa quando está chegando através de fortes dores de cabeça e nos olhos.</p> 
-                    </div> 
-                    <div class="cartao-verso"> 
-                        <div class="cartao-vetor glaucoma-verso"><span>👁️✨</span>GLAUCOMA</div> 
-                        <div class="tag-status tag-verdade">Verdade</div>
-                        <p>O glaucoma é uma doença assintomática e silenciosa. A perda visual começa sutilmente pelas bordas e só é notada em estágios avançados.</p> 
-                    </div> 
-                </div> 
-            </article> 
+        <!-- Card 2 -->
+        <div class="flashcard">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h2>Catarata</h2>
+                    <p>Qual a principal característica desta condição?</p>
+                </div>
+                <div class="card-back">
+                    <h2>Resposta</h2>
+                    <p>É a **opacificação do cristalino** (a lente natural do olho), deixando a visão embaçada. É muito comum no envelhecimento e reversível por cirurgia.</p>
+                </div>
+            </div>
+        </div>
 
-            <!-- CARTÃO 2: Catarata -->
-            <article> 
-                <div class="cartao-container"> 
-                    <div class="cartao-frente"> 
-                        <div class="cartao-vetor catarata-frente"><span>☁️👁️</span>CATARATA</div> 
-                        <div class="tag-status tag-mito">Mito</div>
-                        <p>A catarata é uma doença que só pode ser treated através do uso contínuo de colírios fortes.</p> 
-                    </div> 
-                    <div class="cartao-verso"> 
-                        <div class="cartao-vetor catarata-verso"><span>🔬👁️</span>CATARATA</div> 
-                        <div class="tag-status tag-verdade">Verdade</div>
-                        <p>O único tratamento eficaz para catarata é a cirurgia, onde o cristalino opaco do olho é substituído por uma lente artificial transparente.</p> 
-                    </div> 
-                </div> 
-            </article> 
+        <!-- Card 3 -->
+        <div class="flashcard">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h2>DMRI</h2>
+                    <p>O que significa e quem ela afeta?</p>
+                </div>
+                <div class="card-back">
+                    <h2>Resposta</h2>
+                    <p>**Degeneração Macular Relacionada à Idade**. Afeta a mácula (área central da retina), causando perda da visão central em pessoas idosas.</p>
+                </div>
+            </div>
+        </div>
 
-            <!-- CARTÃO 3: Astigmatismo -->
-            <article> 
-                <div class="cartao-container"> 
-                    <div class="cartao-frente"> 
-                        <div class="cartao-vetor astigmatismo-frente"><span>💫👁️</span>ASTIGMATISMO</div> 
-                        <div class="tag-status tag-mito">Mito</div>
-                        <p>Quem tem astigmatismo enxerga mal apenas para objetos que estão muito distantes.</p> 
-                    </div> 
-                    <div class="cartao-verso"> 
-                        <div class="cartao-vetor astigmatismo-verso"><span>👓👁️</span>ASTIGMATISMO</div> 
-                        <div class="tag-status tag-verdade">Verdade</div>
-                        <p>O astigmatismo causa visão borrada e distorcida para QUALQUER distância (perto ou longe), devido a uma curvatura imperfeita da córnea.</p> 
-                    </div> 
-                </div> 
-            </article> 
+        <!-- Card 4 -->
+        <div class="flashcard">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h2>Astigmatismo</h2>
+                    <p>Qual a causa física dessa falha de refração?</p>
+                </div>
+                <div class="card-back">
+                    <h2>Resposta</h2>
+                    <p>É causado por uma **curvatura irregular da córnea** ou do cristalino, fazendo com que a luz se foque em múltiplos pontos, distorcendo a visão de perto e de longe.</p>
+                </div>
+            </div>
+        </div>
 
-            <!-- CARTÃO 4: Daltonismo -->
-            <article> 
-                <div class="cartao-container"> 
-                    <div class="cartao-frente"> 
-                        <div class="cartao-vetor daltonismo-frente"><span>⚫⚪</span>DALTONISMO</div> 
-                        <div class="tag-status tag-mito">Mito</div>
-                        <p>Todas as pessoas daltonicas enxergam o mundo inteiramente em preto e branco.</p> 
-                    </div> 
-                    <div class="cartao-verso"> 
-                        <div class="cartao-vetor daltonismo-verso"><span>🟢🔴</span>DALTONISMO</div> 
-                        <div class="tag-status tag-verdade">Verdade</div>
-                        <p>A grande maioria dos daltônicos enxerga cores, mas tem dificuldade severa em distinguir tons específicos, principalmente o verde e o vermelho.</p> 
-                    </div> 
-                </div> 
-            </article> 
+        <!-- Card 5 -->
+        <div class="flashcard">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h2>Retinopatia Diabética</h2>
+                    <p>Como essa doença se desenvolve?</p>
+                </div>
+                <div class="card-back">
+                    <h2>Resposta</h2>
+                    <p>Ocorre quando o excesso de glicose no sangue danifica os **vasos sanguíneos da retina**, podendo causar vazamentos de fluido e sangramentos internos.</p>
+                </div>
+            </div>
+        </div>
 
-            <!-- CARTÃO 5: Miopia -->
-            <article> 
-                <div class="cartao-container"> 
-                    <div class="cartao-frente"> 
-                        <div class="cartao-vetor miopia-frente"><span>🔍❌</span>MIOPIA</div> 
-                        <div class="tag-status tag-mito">Mito</div>
-                        <p>Forçar a vista para ler no escuro pode aumentar permanentemente o seu grau de miopia.</p> 
-                    </div> 
-                    <div class="cartao-verso"> 
-                        <div class="cartao-vetor miopia-verso"><span>📖✨</span>MIOPIA</div> 
-                        <div class="tag-status tag-verdade">Verdade</div>
-                        <p>Ler no escuro causa apenas cansaço visual temporário e dor de cabeça. A miopia está ligada ao formato anatômico do olho e à genética.</p> 
-                    </div> 
-                </div> 
-            </article> 
-
-        </section> 
+        <!-- Card 6 -->
+        <div class="flashcard">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h2>Ceratocone</h2>
+                    <p>Como essa condição altera a estrutura do olho?</p>
+                </div>
+                <div class="card-back">
+                    <h2>Resposta</h2>
+                    <p>A córnea sofre um afinamento progressivo e se projeta para a frente, ganhando um **formato de cone**, o que gera forte astigmatismo e visão borrada.</p>
+                </div>
+            </div>
+        </div>
     </main>
-
-    <footer>
-        <p>&copy; 2026 - Projeto Informativo sobre Cuidados Visuais.</p>
-    </footer>
 
 </body>
 </html>
